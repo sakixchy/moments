@@ -9,6 +9,7 @@ import PostCreateForm from './pages/posts/PostCreateForm.js';
 import PostPage from './pages/posts/PostPage.js';
 import PostsPage from './pages/posts/PostsPage.js';
 import { useCurrentUser } from './contexts/CurrentUserContext.js';
+import PostEditForm from './pages/posts/PostEditForm.js';
 
 
 
@@ -35,6 +36,8 @@ function App() {
               <Route exact path="/signup" render={()=><SignUpForm />} />
               <Route exact path="/posts/create" render={()=><PostCreateForm />} />
               <Route exact path="/posts/:id" render={()=><PostPage />} />
+              <Route exact path="/posts/:id/edit" render={()=><PostEditForm />} />
+              <Route render={() => <p>Page not found!</p>} />
             </Switch> 
           </Container>
       </div>
