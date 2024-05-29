@@ -10,6 +10,10 @@ import PostPage from './pages/posts/PostPage.js';
 import PostsPage from './pages/posts/PostsPage.js';
 import { useCurrentUser } from './contexts/CurrentUserContext.js';
 import PostEditForm from './pages/posts/PostEditForm.js';
+import ProfilePage from './pages/profiles/ProfilePage.js';
+import UsernameForm from "./pages/profiles/UsernameForm";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 
 
 
@@ -37,6 +41,22 @@ function App() {
               <Route exact path="/posts/create" render={()=><PostCreateForm />} />
               <Route exact path="/posts/:id" render={()=><PostPage />} />
               <Route exact path="/posts/:id/edit" render={()=><PostEditForm />} />
+              <Route exact path="/profiles/:id" render={()=><ProfilePage />} />
+              <Route
+                    exact
+                    path="/profiles/:id/edit/username"
+                    render={() => <UsernameForm />}
+                  />
+                  <Route
+                    exact
+                    path="/profiles/:id/edit/password"
+                    render={() => <UserPasswordForm />}
+                  />
+                  <Route
+                    exact
+                    path="/profiles/:id/edit"
+                    render={() => <ProfileEditForm />}
+                  />
               <Route render={() => <p>Page not found!</p>} />
             </Switch> 
           </Container>
